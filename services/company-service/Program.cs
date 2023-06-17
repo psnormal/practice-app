@@ -1,4 +1,5 @@
 using company_service;
+using company_service.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<IIntershipPositionService, IntershipPositionService>(); 
 
 //DB connection:
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
