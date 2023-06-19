@@ -1,12 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace practice_service.Models
+namespace practice_service.DTO
 {
-    public class PracticeProfile
+    public class PracticeProfileCreateDto
     {
-        [Required]
-        [Key]
-        public Guid PracticeProfileId { get; set; }
         [Required]
         public Guid UserId { get; set; }
         [Required]

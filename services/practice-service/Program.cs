@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IPracticePeriodService, PracticePeriodService>();
+builder.Services.AddScoped<IPracticeProfileService, PracticeProfileService>();
 
 //DB connection:
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
